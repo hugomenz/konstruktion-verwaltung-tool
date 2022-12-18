@@ -1,0 +1,21 @@
+.task-container {
+  padding: 8px;
+  border: 1px solid green;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+.task-header {
+  padding: 8px;
+  margin-left: 8px;
+}
+
+.task-lst-container {
+  padding: 8px;
+}
+
+.task-item {
+  display: flex;
+  border: 1px solid blue;
+  padding: 8px 16px 8px 48px;
+  margin: 8px;
+}

@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// >> TODO: HeaderAppBar recibe el numero de tareas, meldungen y mensajes como props
+
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { HeaderAppBar } from "./common/app-bar/app-bar.component";
+import { Dashboard } from "./pods/dashboard/dashboard.component";
 
 function App() {
+  const MOCKED_USER = "MANAGER";
+
+  const [currentUser, setCurrentUser] = useState("");
+
+  useEffect(() => {
+    setCurrentUser(MOCKED_USER);
+  }, [MOCKED_USER]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HeaderAppBar user={currentUser} />
+      <Dashboard user={currentUser} />
+    </>
   );
 }
 

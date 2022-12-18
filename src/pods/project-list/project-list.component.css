@@ -1,0 +1,86 @@
+.prj-container {
+  padding: 1rem;
+  border: 1px solid green;
+}
+
+.prj-header {
+  display: flex;
+  padding-left: 8px;
+}
+
+.prj-header-left {
+  width: 50%;
+}
+
+.prj-header-right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+
+.prj-lst-container {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  max-height: 32vh;
+  overflow-y: auto;
+}
+
+.prj-btn {
+  display: flex;
+  justify-content: center;
+  min-height: 108px;
+  padding: 8px 16px 8px 48px;
+  margin: 8px;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.prj-btn:hover {
+  background-color: #eee;
+}
+
+.btn-left {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn-left > p {
+  margin: 0;
+}
+
+.btn-right {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn-right > p {
+  margin: 0;
+}
+
+.prj-title {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.prj-customer {
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(121, 121, 121);
+}
+
+.prj-desc {
+  font-size: 24px;
+}
+
+.prj-estate {
+  color: #666;
+  font-size: 16px;
+}
