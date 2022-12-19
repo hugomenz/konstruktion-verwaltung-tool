@@ -10,42 +10,58 @@ import "./task-list.component.css"; // Importa tus estilos personalizados
 
 interface Props {
   data: Task[];
-  //onFilterChange: () => void;
 }
 
 export const TaskListContainer = (props: Props) => {
+  //const { data } = props;
   const { data } = props;
-  /* const { data, onFilterChange } = props; */
 
-  /* const [filter, setFilter] = useState(""); */
+  const [filter, setFilter] = useState("all");
 
-  const [selectedPriority, setSelectedPriority] = useState("todas");
-  const [selectedType, setSelectedType] = useState("todos");
+  const [selectedPriority, setSelectedPriority] = useState("all");
+  const [selectedType, setSelectedType] = useState("all");
 
-  /*   const onFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setFilter(event.target.value);
-  }; */
+  const onFilterChange = (newFilter: string) => {
+    setFilter(newFilter);
+  };
 
-  /*   const filteredTasks = data.filter((task) => {
-    if (filter === "todas") {
+  const priorityMap: Record<number, string> = {
+    1: "high",
+    2: "med",
+    3: "low",
+  };
+
+  const getPriorityString = (priority: number) => {
+    return priorityMap[priority];
+  };
+
+  console.log(data);
+
+  const filteredTasks = data.filter((task) => {
+    console.log(`inside filteredTask >> filter: ${filter}`);
+    if (filter === "all") {
       return true;
-    } else if (filter === "prioridad") {
-      return task.priority === filter;
+    } else if (filter === "high") {
+      return getPriorityString(task.priority) === filter;
     } else {
       return task.type === filter;
     }
-  }); */
+  });
 
-  /*   useEffect(() => {
-    onFilterChange("priority", selectedPriority);
-    onFilterChange("type", selectedType);
-  }, [selectedPriority, selectedType]); // Este efecto se ejecutará cada vez que cambie selectedPriority o selectedType */
+  //console.log(filteredTasks);
+
+  useEffect(() => {
+    onFilterChange(selectedPriority);
+    onFilterChange(selectedType);
+  }, [selectedPriority, selectedType]); // Este efecto se ejecutará cada vez que cambie selectedPriority o selectedType
 
   const handlePriorityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log(event.target.value);
     setSelectedPriority(event.target.value);
   };
 
   const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log(event.target.value);
     setSelectedType(event.target.value);
   };
 
@@ -55,24 +71,24 @@ export const TaskListContainer = (props: Props) => {
         <label>
           Filtrar por prioridad:
           <select value={selectedPriority} onChange={handlePriorityChange}>
-            <option value="todas">Todas</option>
-            <option value="alta">Alta</option>
-            <option value="media">Media</option>
-            <option value="baja">Baja</option>
+            <option value="all">Todas</option>
+            <option value="high">Alta</option>
+            <option value="med">Media</option>
+            <option value="low">Baja</option>
           </select>
         </label>
         <label>
           Filtrar por tipo:
           <select value={selectedType} onChange={handleTypeChange}>
-            <option value="todos">Todos</option>
-            <option value="cambio">Cambio</option>
+            <option value="all">Todos</option>
+            <option value="change">Cambio</option>
             <option value="revision">Revisión</option>
             <option value="envio">Envío</option>
           </select>
         </label>
       </div>
       <div className="task-lst-container">
-        {data.map((task) => (
+        {filteredTasks.map((task) => (
           <TaskList key={task.id} task={task} />
         ))}
       </div>

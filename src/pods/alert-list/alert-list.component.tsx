@@ -1,3 +1,7 @@
+// >> TODO: Ordenar las alertas por actualidad
+// **********************************************
+// >> TODO: Crear alert-list container
+
 import React from "react";
 import { Alert } from "../../api";
 import "./alert-list.component.css";

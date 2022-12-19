@@ -7,45 +7,22 @@
 // *******************************************************************************
 // *******************************************************************************
 // *******************************************************************************
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { AlertList } from "../alert-list/alert-list.component";
 import { Calendar } from "../calendar/calender.component";
-import { Alert, getAllAlertList, getAllProjectList, getAllTaskList, Project, Task } from "../../api";
-
-import "./dashboard.component.css"; // Importa tus estilos personalizados
+import { Alert, Project, Task } from "../../api";
 import { ProjectListContainer } from "../project-list/project-list.container";
 import { TaskListContainer } from "../task-list/task-list.container";
-import { getFilteredTaskList } from "../../api/api";
 
+import "./dashboard.component.css"; // Importa tus estilos personalizados
 interface Props {
-  user: string;
+  projects: Project[];
+  tasks: Task[];
+  alerts: Alert[];
 }
 
-export const Dashboard = (props: Props) => {
-  const { user } = props;
-
-  // divide the information from JSON
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [alerts, setAlerts] = useState<Alert[]>([]);
-  const [tasks, setTasks] = useState<Task[]>([]);
-
-  useEffect(() => {
-    console.log(`Usuario logeado: ${user}`);
-
-    if (user === "MANAGER") {
-      // Obtener todos los proyectos, alertas y tareas
-      setProjects(getAllProjectList());
-      setAlerts(getAllAlertList());
-      setTasks(getAllTaskList());
-    } else {
-      // Obtener los proyectos asignados al usuario, todas las alertas y las tareas filtradas por proyectos asignados
-      setProjects(getAllProjectList().filter((project) => project.designer === user));
-      setAlerts(getAllAlertList());
-
-      const userProjectNumberList = projects.map((project) => project.projectNumber);
-      setTasks(getFilteredTaskList(userProjectNumberList));
-    }
-  }, [user]);
+export const DashboardComponent = (props: Props) => {
+  const { projects, tasks, alerts } = props;
 
   return (
     <div className="dashboard">
