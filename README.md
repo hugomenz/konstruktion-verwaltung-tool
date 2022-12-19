@@ -34,7 +34,8 @@ Working on complex machinery projects can become chaotic when you are managing m
 ### Data
 
 The projects in the JSON file look like this:
-`    {
+
+````{
       "id": "prj-1",
       "projectNumber": 1205,
       "description": "Rundschlinge Automat",
@@ -81,7 +82,7 @@ The projects in the JSON file look like this:
           "projectNumber": 1205
         }
       ]
-    },`
+    },```
 
 ## Installation and Usage
 
@@ -96,3 +97,4 @@ If you would like to contribute to the project, please submit a pull request wit
 # Contact
 
 For any questions or suggestions about the project, please email the development team at hugomartin.menz@gmail.com
+````
