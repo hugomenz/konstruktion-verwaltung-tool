@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+# SmartWorks: A Customized Project Management System for Mechanical Designers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A custom-made project management application for small and medium-sized businesses, focused on mechanical designers. This application provides a dashboard with the next items:
 
-## Available Scripts
+# Inspiration for the Project
 
-In the project directory, you can run:
+Working on complex machinery projects can become chaotic when you are managing multiple projects at the same time. I think that having a centralized, intuitive place to access all necessary project information would eliminate issues such as misunderstandings, forgotten documentation, lost project status, and the need to constantly review everything every 3-4 weeks. This project was inspired by the desire to streamline and simplify the project management process for mechanical designers.
 
-### `npm start`
+# Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- On the left, a list of projects where the logged designer is working.
+- and a list of highest priority tasks of the projects where the designer is working.
+- On the right side, alerts that the designers or project managers can use to share important information
+- a calendar area with 2 or 3 months with the week number too, in that way can the designer estimate times during a phonecall or thinking about delivery times.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies
 
-### `npm test`
+- React (for building the web application)
+- JSON (for data storage and retrieval in the current version)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Future developments
 
-### `npm run build`
+- In addition, I'm developing the option of adding a real-time communication system or chat feature for designers and project managers to collaborate and share information.
+- I have also suggested the possibility of adding a notes section where users can write ideas or comments about projects, like general data.
+- Inside of each project I'm thinking about the option of implementing a order list section in the application, where users can track their orders or where the designer generates the bill of materials (BOM) using a csv file loaded from the app, and we have mentioned the possibility of downloading a PDF file with the list of requests or creating the PDF file on the fly when a quote is requested.
+- In addition, I would like to have the option of having a specific page where users can view and edit project information, such as project status and deadlines.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Future Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Real-time communication or chat feature, such as Socket.io or WebSockets
+- PDF generation library, such as pdfmake or jsPDF, for creating PDF files on the fly
+- CSV parsing library, such as PapaParse, for processing CSV files for the BOM feature
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Data
 
-### `npm run eject`
+The projects in the JSON file look like this:
+`    {
+      "id": "prj-1",
+      "projectNumber": 1205,
+      "description": "Rundschlinge Automat",
+      "customer": "Arno Fita GbmH",
+      "estate": "in Konstruktion",
+      "isActive": true,
+      "designer": "USER 1",
+      "alert_list": [
+        {
+          "id": "alt-1",
+          "description": "Alert Test 1. Änderung Standard Zeichung Montageplatte Pneumatik",
+          "date": "11.12.2022 10:15",
+          "type": "Änderung",
+          "user": "USER 1",
+          "projectNumber": 1205
+        }
+      ],
+      "task_list": [
+        {
+          "id": "tsk-1",
+          "description": "Fehler in der Grundplatte für Station 4 gefunden. Es soll geändert werden",
+          "date": "11.12.2022 10:44",
+          "type": "Änderung",
+          "priority": 1,
+          "user": "USER 1",
+          "projectNumber": 1205
+        },
+        {
+          "id": "tsk-2",
+          "description": "Kollision zwischen Station 1 und Station 2",
+          "date": "13.12.2022 10:33",
+          "type": "Prüfung",
+          "priority": 2,
+          "user": "USER 2",
+          "projectNumber": 1205
+        },
+        {
+          "id": "tsk-3",
+          "description": "Terminplan an Kunde zukommen lassen",
+          "date": "15.12.2022 09:22",
+          "type": "Dokumentation",
+          "priority": 1,
+          "user": "MANAGER",
+          "projectNumber": 1205
+        }
+      ]
+    },`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Installation and Usage
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. Run `npm start` to start the application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contribution
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If you would like to contribute to the project, please submit a pull request with your changes.
 
-## Learn More
+# Contact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+For any questions or suggestions about the project, please email the development team at hugomartin.menz@gmail.com
