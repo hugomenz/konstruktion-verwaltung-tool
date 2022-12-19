@@ -35,54 +35,56 @@ Working on complex machinery projects can become chaotic when you are managing m
 
 The projects in the JSON file look like this:
 
-````{
-      "id": "prj-1",
-      "projectNumber": 1205,
-      "description": "Rundschlinge Automat",
-      "customer": "Arno Fita GbmH",
-      "estate": "in Konstruktion",
-      "isActive": true,
-      "designer": "USER 1",
-      "alert_list": [
-        {
-          "id": "alt-1",
-          "description": "Alert Test 1. Änderung Standard Zeichung Montageplatte Pneumatik",
-          "date": "11.12.2022 10:15",
-          "type": "Änderung",
-          "user": "USER 1",
-          "projectNumber": 1205
-        }
-      ],
-      "task_list": [
-        {
-          "id": "tsk-1",
-          "description": "Fehler in der Grundplatte für Station 4 gefunden. Es soll geändert werden",
-          "date": "11.12.2022 10:44",
-          "type": "Änderung",
-          "priority": 1,
-          "user": "USER 1",
-          "projectNumber": 1205
-        },
-        {
-          "id": "tsk-2",
-          "description": "Kollision zwischen Station 1 und Station 2",
-          "date": "13.12.2022 10:33",
-          "type": "Prüfung",
-          "priority": 2,
-          "user": "USER 2",
-          "projectNumber": 1205
-        },
-        {
-          "id": "tsk-3",
-          "description": "Terminplan an Kunde zukommen lassen",
-          "date": "15.12.2022 09:22",
-          "type": "Dokumentation",
-          "priority": 1,
-          "user": "MANAGER",
-          "projectNumber": 1205
-        }
-      ]
-    },```
+```json
+{
+  "id": "prj-1",
+  "projectNumber": 1205,
+  "description": "Rundschlinge Automat",
+  "customer": "Arno Fita GbmH",
+  "estate": "in Konstruktion",
+  "isActive": true,
+  "designer": "USER 1",
+  "alert_list": [
+    {
+      "id": "alt-1",
+      "description": "Alert Test 1. Änderung Standard Zeichung Montageplatte Pneumatik",
+      "date": "11.12.2022 10:15",
+      "type": "Änderung",
+      "user": "USER 1",
+      "projectNumber": 1205
+    }
+  ],
+  "task_list": [
+    {
+      "id": "tsk-1",
+      "description": "Fehler in der Grundplatte für Station 4 gefunden. Es soll geändert werden",
+      "date": "11.12.2022 10:44",
+      "type": "Änderung",
+      "priority": 1,
+      "user": "USER 1",
+      "projectNumber": 1205
+    },
+    {
+      "id": "tsk-2",
+      "description": "Kollision zwischen Station 1 und Station 2",
+      "date": "13.12.2022 10:33",
+      "type": "Prüfung",
+      "priority": 2,
+      "user": "USER 2",
+      "projectNumber": 1205
+    },
+    {
+      "id": "tsk-3",
+      "description": "Terminplan an Kunde zukommen lassen",
+      "date": "15.12.2022 09:22",
+      "type": "Dokumentation",
+      "priority": 1,
+      "user": "MANAGER",
+      "projectNumber": 1205
+    }
+  ]
+}
+```
 
 ## Installation and Usage
 
@@ -97,4 +99,3 @@ If you would like to contribute to the project, please submit a pull request wit
 # Contact
 
 For any questions or suggestions about the project, please email the development team at hugomartin.menz@gmail.com
-````
