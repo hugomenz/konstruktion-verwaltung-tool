@@ -4,13 +4,13 @@
 }
 
 .dash-col-left {
-  width: 60%;
+  width: 55%;
   display: flex;
   flex-direction: column;
 }
 
 .dash-col-right {
-  width: 40%;
+  width: 45%;
   display: flex;
   flex-direction: column;
 }

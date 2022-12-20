@@ -1,6 +1,9 @@
 // >> TODO: Ordenar las alertas por actualidad
 // **********************************************
 // >> TODO: Crear alert-list container
+// **********************************************
+// >> TODO: Crear alertas usando los templates de Material UI
+//https://mui.com/material-ui/react-alert/
 
 import React from "react";
 import { Alert } from "../../api";
@@ -23,9 +26,14 @@ export const AlertList = (props: Props) => {
         {data.map((alert, index) => {
           return (
             <div key={index} className="alert-item">
-              <span>{alert.user}</span>
-              <span>{alert.date}</span> <span>{alert.description}</span>
-              <span>{alert.type}</span>
+              <div className="box-left">
+                <p className="alert-user">{alert.user}</p>
+                <p className="alert-date">{alert.date}</p>
+              </div>
+              <div className="box-right">
+                <p className="alert-type">{alert.type}</p>
+                <p className="alert-desc">{alert.description}</p>
+              </div>
             </div>
           );
         })}
