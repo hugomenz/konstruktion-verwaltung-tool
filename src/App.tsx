@@ -6,8 +6,6 @@ import { HeaderAppBar } from "./common/app-bar/app-bar.component";
 import { Dashboard } from "./pods/dashboard/dashboard.container";
 
 function App() {
-  const MOCKED_USER = "USER 1";
-
   const [currentUser, setCurrentUser] = useState("");
 
   const setCurrentUserHandler = (user: string) => {
@@ -17,7 +15,11 @@ function App() {
   return (
     <>
       <HeaderAppBar user={currentUser} />
-      <button onClick={() => setCurrentUserHandler(MOCKED_USER)}>Establecer usuario actual</button>
+      <div className="flex btn-box">
+        <button onClick={() => setCurrentUserHandler("MANAGER")}>set USER as MANAGER</button>
+        <button onClick={() => setCurrentUserHandler("USER 1")}>set USER as USER 1</button>
+        <button onClick={() => setCurrentUserHandler("USER 2")}>set USER as USER 2</button>
+      </div>
       <Dashboard user={currentUser} />
     </>
   );

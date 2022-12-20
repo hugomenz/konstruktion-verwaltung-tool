@@ -1,0 +1,9 @@
+.btn-box {
+  width: 35%;
+
+  justify-content: space-between;
+}
+
+.btn-box > button {
+  height: 2rem;
+}
