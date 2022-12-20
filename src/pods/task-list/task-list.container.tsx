@@ -1,9 +1,9 @@
-// >> TODO: Permitir el filtrado de prioridad, usuario o proyecto
 // **************************************************************
 // >> TODO: Componentizar en ekl task header lo de las opciones, crear carpeta componentes dentro de task-list
 
 import React, { useState, useEffect } from "react";
 import { Task } from "../../api";
+import { FilterOptions } from "./components/filter-options.component";
 import { TaskList } from "./task-list.component";
 
 import "./task-list.component.css"; // Importa tus estilos personalizados
@@ -13,17 +13,12 @@ interface Props {
 }
 
 export const TaskListContainer = (props: Props) => {
-  //const { data } = props;
   const { data } = props;
 
-  const [filter, setFilter] = useState("all");
-
-  const [selectedPriority, setSelectedPriority] = useState("all");
-  const [selectedType, setSelectedType] = useState("all");
-
-  const onFilterChange = (newFilter: string) => {
-    setFilter(newFilter);
-  };
+  const [filterPrio, setFilterPrio] = useState<string>("all");
+  const [filterType, setFilterType] = useState<string>("Alle");
+  const [selectedPriority, setSelectedPriority] = useState<any>("all");
+  const [selectedType, setSelectedType] = useState<any>("Alle");
 
   const priorityMap: Record<number, string> = {
     1: "high",
@@ -31,65 +26,64 @@ export const TaskListContainer = (props: Props) => {
     3: "low",
   };
 
+  const onFilterTypeChange = (newFilter: string) => {
+    setFilterType(newFilter);
+  };
+
+  const onFilterPrioChange = (newFilter: string) => {
+    setFilterPrio(newFilter);
+  };
+
   const getPriorityString = (priority: number) => {
     return priorityMap[priority];
   };
 
-  console.log(data);
-
-  const filteredTasks = data.filter((task) => {
-    console.log(`inside filteredTask >> filter: ${filter}`);
-    if (filter === "all") {
-      return true;
-    } else if (filter === "high") {
-      return getPriorityString(task.priority) === filter;
-    } else {
-      return task.type === filter;
-    }
-  });
-
-  //console.log(filteredTasks);
-
-  useEffect(() => {
-    onFilterChange(selectedPriority);
-    onFilterChange(selectedType);
-  }, [selectedPriority, selectedType]); // Este efecto se ejecutará cada vez que cambie selectedPriority o selectedType
-
   const handlePriorityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(event.target.value);
+    console.log(`handlePriorityChange: ${event.target.value}`);
     setSelectedPriority(event.target.value);
   };
 
   const handleTypeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(event.target.value);
+    console.log(`handleTypeChange: ${event.target.value}`);
     setSelectedType(event.target.value);
   };
+
+  useEffect(() => {
+    onFilterTypeChange(selectedType);
+  }, [selectedType]);
+
+  useEffect(() => {
+    onFilterPrioChange(selectedPriority);
+  }, [selectedPriority]);
+
+  console.log(`before filterredTasks FILTER TYPE: ${filterType}`);
+  console.log(`before filterredTasks FILTER PRIO: ${filterPrio}`);
+
+  const filteredTasks = data.reduce((acc: any, task: Task) => {
+    if (filterPrio !== "all" && getPriorityString(task.priority) !== filterPrio) {
+      return acc;
+    }
+
+    if (filterType !== "Alle" && task.type !== filterType) {
+      return acc;
+    }
+
+    return [...acc, task];
+  }, []);
 
   return (
     <div className="task-container">
       <div className="task-header">
-        <label>
-          Priorität:
-          <select value={selectedPriority} onChange={handlePriorityChange}>
-            <option value="all">Todas</option>
-            <option value="high">Alta</option>
-            <option value="med">Media</option>
-            <option value="low">Baja</option>
-          </select>
-        </label>
-        <label>
-          Typ:
-          <select value={selectedType} onChange={handleTypeChange}>
-            <option value="all">Todos</option>
-            <option value="change">Cambio</option>
-            <option value="revision">Revisión</option>
-            <option value="envio">Envío</option>
-          </select>
-        </label>
+        <FilterOptions
+          selectedType={selectedType}
+          selectedPriority={selectedPriority}
+          handleTypeChange={handleTypeChange}
+          handlePriorityChange={handlePriorityChange}
+        />
       </div>
       <div className="task-lst-container">
-        {filteredTasks.map((task) => (
-          <TaskList key={task.id} task={task} />
+        {filteredTasks.map((task: any) => (
+          <TaskList key={task.description} task={task} />
         ))}
       </div>
     </div>
