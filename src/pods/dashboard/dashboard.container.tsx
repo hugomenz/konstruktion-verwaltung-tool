@@ -8,8 +8,8 @@
 // *******************************************************************************
 // *******************************************************************************
 import React, { useState, useEffect } from "react";
-import { Alert, getAllAlertList, getAllProjectList, getAllTaskList, Project, Task } from "../../api";
-import { getFilteredTaskList } from "../../api/api";
+import { Alert, getAllAlertList, getAllProjectList, Project, Task } from "../../api";
+import { getFilteredTaskList } from "../../api/api.task-list";
 import { DashboardComponent } from "./dashboard.component";
 import "./dashboard.component.css";
 
@@ -24,13 +24,11 @@ export const Dashboard = (props: Props) => {
   const [alerts, setAlerts] = useState<Alert[]>([]);
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  //let tasks: Task[] = [];
-
   const fetchData = () => {
     if (user === "MANAGER") {
       setProjects(getAllProjectList());
     } else {
-      setProjects(getAllProjectList().filter((project) => project.designer === user));
+      setProjects(getAllProjectList().filter((project: Project) => project.designer === user));
     }
   };
 
