@@ -1,7 +1,7 @@
 {
   "project_list": [
     {
-      "id": "prj-1",
+      "id": "1",
       "projectNumber": 1205,
       "description": "Rundschlinge Automat",
       "customer": "Artefita",
@@ -10,7 +10,7 @@
       "designer": "USER 1",
       "alert_list": [
         {
-          "id": "alt-1",
+          "id": "1",
           "description": "Alert Test 1. Änderung Standard Zeichung Montageplatte Pneumatik",
           "date": "11.12.2022 10:15",
           "type": "Änderung",
@@ -20,7 +20,7 @@
       ],
       "task_list": [
         {
-          "id": "tsk-1",
+          "id": "1",
           "description": "Fehler in der Grundplatte für Station 4 gefunden. Es soll geändert werden",
           "date": "11.12.2022 10:44",
           "type": "Änderung",
@@ -29,18 +29,18 @@
           "projectNumber": 1205
         },
         {
-          "id": "tsk-2",
+          "id": "2",
           "description": "Kollision zwischen Station 1 und Station 2",
           "date": "13.12.2022 10:33",
-          "type": "Prüfung",
-          "priority": 2,
+          "type": "Nachprüfung",
+          "priority": 1,
           "user": "USER 2",
           "projectNumber": 1205
         }
       ]
     },
     {
-      "id": "prj-2",
+      "id": "2",
       "projectNumber": 1114,
       "description": "Seat Belt Automat",
       "customer": "Alfred Remmen",
@@ -49,7 +49,7 @@
       "designer": "USER 1",
       "alert_list": [
         {
-          "id": "alt-2",
+          "id": "1",
           "description": "Alert Test 2. Kollision! ich brauch unterstützung mit dem Design",
           "date": "13.12.2022 10:15",
           "type": "Hilfe",
@@ -58,7 +58,7 @@
         },
 
         {
-          "id": "alt-3",
+          "id": "2",
           "description": "Alert Test 3. Es fehlt mir nichts ein! ich brauch unterstützung mit dem Design",
           "date": "15.12.2022 10:15",
           "type": "Hilfe",
@@ -68,7 +68,7 @@
       ],
       "task_list": [
         {
-          "id": "tsk-3",
+          "id": "1",
           "description": "Teile für die Station 2 können bestellt werden",
           "date": "14.12.2022 10:55",
           "type": "Bestellung",
@@ -77,7 +77,7 @@
           "projectNumber": 1114
         },
         {
-          "id": "tsk-4",
+          "id": "2",
           "description": "Terminplan am Kunde schicken",
           "date": "15.12.2022 10:25",
           "type": "Dokumentation",
@@ -88,7 +88,7 @@
       ]
     },
     {
-      "id": "prj-3",
+      "id": "3",
       "projectNumber": 1283,
       "description": "Hot Cut Automat",
       "customer": "Berno Auto Arg",
@@ -97,7 +97,7 @@
       "designer": "USER 1",
       "alert_list": [
         {
-          "id": "alt-4",
+          "id": "1",
           "description": "Alert Test 4. Mögliche Kollision zwischen Station 3 und 4 in 1205",
           "date": "17.12.2022 10:15",
           "type": "revision",
@@ -107,16 +107,16 @@
       ],
       "task_list": [
         {
-          "id": "tsk-5",
+          "id": "1",
           "description": "Teile für Station 3 vorbereiten. Kollision Prüfung",
           "date": "16.12.2022 09:15",
-          "type": "Prüfung",
+          "type": "Nachprüfung",
           "priority": 2,
           "user": "USER 1",
           "projectNumber": 1283
         },
         {
-          "id": "tsk-6",
+          "id": "2",
           "description": "Zeichnugen für Station 3. ",
           "date": "17.12.2022 11:15",
           "type": "Zeichnungen",
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "id": "prj-4",
+      "id": "4",
       "projectNumber": 1432,
       "description": "Sling-Maschine Automat",
       "customer": "Industrieausrüstung GmbH",
@@ -136,7 +136,7 @@
       "designer": "USER 2",
       "alert_list": [
         {
-          "id": "alt-5",
+          "id": "1",
           "description": "Alarm Test 1. Schlinge beschädigt",
           "date": "23.12.2022 10:15",
           "type": "Fehler",
@@ -144,7 +144,7 @@
           "projectNumber": 1432
         },
         {
-          "id": "alt-6",
+          "id": "2",
           "description": "Alarm Test 2. Motor defekt",
           "date": "24.12.2022 08:00",
           "type": "Fehler",
@@ -154,7 +154,7 @@
       ],
       "task_list": [
         {
-          "id": "tsk-7",
+          "id": "1",
           "description": "Beschädigte Schlinge ersetzen",
           "date": "23.12.2022 12:00",
           "type": "Reparatur",
@@ -165,7 +165,7 @@
       ]
     },
     {
-      "id": "prj-5",
+      "id": "5",
       "projectNumber": 1519,
       "description": "Sling-Maschine für Lasten mit Kran",
       "customer": "Kran- und Hebetechnik AG",
@@ -174,7 +174,7 @@
       "designer": "USER 2",
       "alert_list": [
         {
-          "id": "alt-7",
+          "id": "1",
           "description": "Alarm Test 3. Kunde meldet Fehler bei Sling-Maschine",
           "date": "25.12.2022 10:15",
           "type": "Fehlermeldung",
@@ -184,16 +184,16 @@
       ],
       "task_list": [
         {
-          "id": "tsk-8",
+          "id": "1",
           "description": "Fehler an Sling-Maschine überprüfen",
           "date": "25.12.2022 12:00",
-          "type": "Überprüfung",
+          "type": "Nachprüfung",
           "priority": 1,
           "user": "MANAGER",
           "projectNumber": 1519
         },
         {
-          "id": "tsk-9",
+          "id": "2",
           "description": "Ersatzteil für Sling-Maschine an Kunde senden",
           "date": "26.12.2022 09:00",
           "type": "Versand",
@@ -203,5 +203,23 @@
         }
       ]
     }
-  ]
+  ],
+  "configuration": {
+    "taskListTypes": [
+      { "id": "1", "description": "Alle" },
+      { "id": "2", "description": "Nachprüfung" },
+      { "id": "3", "description": "Bestellung" },
+      { "id": "4", "description": "Dokumentation" },
+      { "id": "5", "description": "Zeichnungen" },
+      { "id": "6", "description": "Konstruktion" },
+      { "id": "7", "description": "Versand" },
+      { "id": "8", "description": "Änderung" }
+    ],
+    "taskListPriority": [
+      { "id": "1", "value": "all", "description": "Alle" },
+      { "id": "2", "value": "high", "description": "Hoch" },
+      { "id": "3", "value": "med", "description": "Medium" },
+      { "id": "4", "value": "low", "description": "Niedrig" }
+    ]
+  }
 }

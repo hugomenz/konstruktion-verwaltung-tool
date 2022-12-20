@@ -27,3 +27,14 @@ export interface Task {
   user: string;
   projectNumber: number;
 }
+
+export interface PrioConfig {
+  id: string;
+  value: string;
+  description: string;
+}
+
+export interface TypeConfig {
+  id: string;
+  description: string;
+}
