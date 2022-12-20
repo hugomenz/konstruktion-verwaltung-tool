@@ -19,6 +19,7 @@ export const TaskListContainer = (props: Props) => {
   const [filterType, setFilterType] = useState<string>("Alle");
   const [selectedPriority, setSelectedPriority] = useState<any>("all");
   const [selectedType, setSelectedType] = useState<any>("Alle");
+  const [showComplete, setShowComplete] = useState(false);
 
   const priorityMap: Record<number, string> = {
     1: "high",
@@ -48,6 +49,16 @@ export const TaskListContainer = (props: Props) => {
     setSelectedType(event.target.value);
   };
 
+  const handleShowComplete = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setShowComplete(event.target.checked);
+  };
+
+  const handleResetAllFilter = () => {
+    setShowComplete(false);
+    setSelectedType("Alle");
+    setSelectedPriority("all");
+  };
+
   useEffect(() => {
     onFilterTypeChange(selectedType);
   }, [selectedType]);
@@ -56,20 +67,15 @@ export const TaskListContainer = (props: Props) => {
     onFilterPrioChange(selectedPriority);
   }, [selectedPriority]);
 
-  console.log(`before filterredTasks FILTER TYPE: ${filterType}`);
-  console.log(`before filterredTasks FILTER PRIO: ${filterPrio}`);
-
-  const filteredTasks = data.reduce((acc: any, task: Task) => {
-    if (filterPrio !== "all" && getPriorityString(task.priority) !== filterPrio) {
-      return acc;
-    }
-
-    if (filterType !== "Alle" && task.type !== filterType) {
-      return acc;
-    }
-
-    return [...acc, task];
-  }, []);
+  const filteredTasks = data.filter((task: Task) => {
+    return filterPrio !== "all" && getPriorityString(task.priority) !== filterPrio
+      ? false
+      : filterType !== "Alle" && task.type !== filterType
+      ? false
+      : !showComplete && task.isCompleted
+      ? false
+      : true;
+  });
 
   return (
     <div className="task-container">
@@ -79,11 +85,14 @@ export const TaskListContainer = (props: Props) => {
           selectedPriority={selectedPriority}
           handleTypeChange={handleTypeChange}
           handlePriorityChange={handlePriorityChange}
+          showComplete={showComplete}
+          onShowComplete={handleShowComplete}
+          onResetFilter={handleResetAllFilter}
         />
       </div>
       <div className="task-lst-container">
-        {filteredTasks.map((task: any) => (
-          <TaskList key={task.description} task={task} />
+        {filteredTasks.map((task: any, index) => (
+          <TaskList key={index} task={task} />
         ))}
       </div>
     </div>

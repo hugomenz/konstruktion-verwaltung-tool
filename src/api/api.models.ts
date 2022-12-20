@@ -26,6 +26,7 @@ export interface Task {
   priority: number;
   user: string;
   projectNumber: number;
+  isCompleted: boolean;
 }
 
 export interface PrioConfig {

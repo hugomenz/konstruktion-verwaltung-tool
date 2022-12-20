@@ -1,15 +1,28 @@
 import React from "react";
 import { getPriorityConfigList, getTypeConfigList, PrioConfig, TypeConfig } from "../../../api";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
+import IconButton from "@mui/material/IconButton";
 
 interface Props {
   selectedType: string;
   selectedPriority: string;
+  showComplete: boolean;
   handleTypeChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   handlePriorityChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onShowComplete: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onResetFilter: () => void;
 }
 
 export const FilterOptions = (props: Props) => {
-  const { selectedType, selectedPriority, handleTypeChange, handlePriorityChange } = props;
+  const {
+    selectedType,
+    selectedPriority,
+    handleTypeChange,
+    handlePriorityChange,
+    showComplete,
+    onShowComplete,
+    onResetFilter,
+  } = props;
 
   const typeConfig = getTypeConfigList();
   const priorityConfig = getPriorityConfigList();
@@ -40,6 +53,13 @@ export const FilterOptions = (props: Props) => {
           })}
         </select>
       </label>
+      <label>
+        Erledigt einblenden
+        <input type="checkbox" checked={showComplete} onChange={onShowComplete} />
+      </label>
+      <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <RestartAltIcon onClick={onResetFilter} />
+      </IconButton>
     </>
   );
 };

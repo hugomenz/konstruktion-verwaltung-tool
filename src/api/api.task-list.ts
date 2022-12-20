@@ -18,3 +18,5 @@ export const getTypeConfigList = () => {
 export const getPriorityConfigList = () => {
   return getAllConfigurationList().taskListPriority;
 };
+
+export const putIsComplete = () => {};
