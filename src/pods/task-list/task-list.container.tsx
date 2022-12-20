@@ -69,7 +69,7 @@ export const TaskListContainer = (props: Props) => {
     <div className="task-container">
       <div className="task-header">
         <label>
-          Filtrar por prioridad:
+          Priorität:
           <select value={selectedPriority} onChange={handlePriorityChange}>
             <option value="all">Todas</option>
             <option value="high">Alta</option>
@@ -78,7 +78,7 @@ export const TaskListContainer = (props: Props) => {
           </select>
         </label>
         <label>
-          Filtrar por tipo:
+          Typ:
           <select value={selectedType} onChange={handleTypeChange}>
             <option value="all">Todos</option>
             <option value="change">Cambio</option>
