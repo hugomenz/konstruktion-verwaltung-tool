@@ -20,39 +20,29 @@ interface Props {
 export const Dashboard = (props: Props) => {
   const { user } = props;
 
-  // divide the information from JSON
   const [projects, setProjects] = useState<Project[]>([]);
   const [alerts, setAlerts] = useState<Alert[]>([]);
   const [tasks, setTasks] = useState<Task[]>([]);
 
+  //let tasks: Task[] = [];
+
   const fetchData = () => {
-    console.log(`Usuario logeado: ${user}`);
-
     if (user === "MANAGER") {
-      // Obtener todos los proyectos, alertas y tareas
       setProjects(getAllProjectList());
-
-      setTasks(getAllTaskList());
     } else {
-      // Obtener los proyectos asignados al usuario, todas las alertas y las tareas filtradas por proyectos asignados
       setProjects(getAllProjectList().filter((project) => project.designer === user));
-
-      const userProjectNumberList = projects.map((project) => project.projectNumber);
-      setTasks(getFilteredTaskList(userProjectNumberList));
     }
   };
 
   useEffect(() => {
-    setAlerts(getAllAlertList());
     fetchData();
+    setAlerts(getAllAlertList());
   }, [user]);
 
-  console.log(`inside dashboard >> projects: ${projects}`);
-  console.log("------------------------------");
-  console.log(`inside dashboard >> tasks: ${tasks}`);
-  console.log("------------------------------");
-  console.log(`inside dashboard >> alerts: ${alerts}`);
-  console.log("------------------------------");
+  useEffect(() => {
+    const userProjectNumberList = projects.map((project) => project.projectNumber);
+    setTasks(getFilteredTaskList(userProjectNumberList));
+  }, [projects]);
 
   return (
     <>
