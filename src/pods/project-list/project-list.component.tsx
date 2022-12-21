@@ -1,10 +1,10 @@
 import React from "react";
-import { Project } from "../../api";
+import { ProjectEntityApi } from "./api/project-list.api-model";
 
 import "./project-list.component.css"; // Importa tus estilos personalizados
 
 interface Props {
-  data: Project[];
+  data: ProjectEntityApi[];
   title: string;
   onAddProject: () => void;
   onHideProject: (event: React.ChangeEvent<HTMLInputElement>) => void;

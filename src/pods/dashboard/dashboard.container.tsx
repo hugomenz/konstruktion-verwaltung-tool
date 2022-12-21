@@ -8,10 +8,14 @@
 // *******************************************************************************
 // *******************************************************************************
 import React, { useState, useEffect } from "react";
-import { Alert, getAllAlertList, getAllProjectList, Project, Task } from "../../api";
-import { getFilteredTaskList } from "../../api/api.task-list";
 import { DashboardComponent } from "./dashboard.component";
 import "./dashboard.component.css";
+import { useProjectCollection } from "../project-list/project-list.hook";
+import { ProjectEntityApi } from "../project-list/api/project-list.api-model";
+import { AlertEntityApi } from "../alert-list/api/alert-list.api-model";
+import { TaskEntityApi } from "../task-list/api/task-list.api-model";
+import { getAllAlertList } from "../alert-list/api";
+import { getFilteredTaskList } from "../task-list/api";
 
 interface Props {
   user: string;
@@ -20,15 +24,21 @@ interface Props {
 export const Dashboard = (props: Props) => {
   const { user } = props;
 
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [alerts, setAlerts] = useState<Alert[]>([]);
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const { projectCollection, loadProjectCollection } = useProjectCollection();
+
+  const [projects, setProjects] = useState<ProjectEntityApi[]>([]);
+  const [alerts, setAlerts] = useState<AlertEntityApi[]>([]);
+  const [tasks, setTasks] = useState<TaskEntityApi[]>([]);
+
+  React.useEffect(() => {
+    loadProjectCollection();
+  }, []);
 
   const fetchData = () => {
     if (user === "MANAGER") {
-      setProjects(getAllProjectList());
+      setProjects(projectCollection);
     } else {
-      setProjects(getAllProjectList().filter((project: Project) => project.designer === user));
+      setProjects(projectCollection.filter((project: ProjectEntityApi) => project.designer === user));
     }
   };
 
@@ -38,7 +48,7 @@ export const Dashboard = (props: Props) => {
   }, [user]);
 
   useEffect(() => {
-    const userProjectNumberList = projects.map((project) => project.projectNumber);
+    const userProjectNumberList = projectCollection.map((project) => project.projectNumber);
     setTasks(getFilteredTaskList(userProjectNumberList));
   }, [projects]);
 

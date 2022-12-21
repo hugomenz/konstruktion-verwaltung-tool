@@ -1,7 +1,9 @@
 import React from "react";
-import { getPriorityConfigList, getTypeConfigList, PrioConfig, TypeConfig } from "../../../api";
+
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import IconButton from "@mui/material/IconButton";
+import { PrioConfigEntityApi, TypeConfigEntityApi } from "./api/filter-options.api-model";
+import { getPriorityConfigList, getTypeConfigList } from "./api/filter-options.api";
 
 interface Props {
   selectedType: string;
@@ -24,15 +26,22 @@ export const FilterOptions = (props: Props) => {
     onResetFilter,
   } = props;
 
-  const typeConfig = getTypeConfigList();
-  const priorityConfig = getPriorityConfigList();
+  let typeConfig: TypeConfigEntityApi[] = [] as TypeConfigEntityApi[];
+  let priorityConfig: PrioConfigEntityApi[] = [] as PrioConfigEntityApi[];
+
+  getTypeConfigList().then((response) => {
+    typeConfig = response;
+  });
+  getPriorityConfigList().then((response) => {
+    priorityConfig = response;
+  });
 
   return (
     <>
       <label>
         Priorität:
         <select value={selectedPriority} onChange={handlePriorityChange}>
-          {priorityConfig.map((config: PrioConfig) => {
+          {priorityConfig.map((config: PrioConfigEntityApi) => {
             return (
               <React.Fragment key={config.id}>
                 <option value={config.value}>{config.description}</option>
@@ -44,7 +53,7 @@ export const FilterOptions = (props: Props) => {
       <label>
         Typ:
         <select value={selectedType} onChange={handleTypeChange}>
-          {typeConfig.map((config: TypeConfig) => {
+          {typeConfig.map((config: TypeConfigEntityApi) => {
             return (
               <React.Fragment key={config.description}>
                 <option value={config.description}>{config.description}</option>

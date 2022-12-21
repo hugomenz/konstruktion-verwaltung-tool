@@ -6,11 +6,11 @@
 //https://mui.com/material-ui/react-alert/
 
 import React from "react";
-import { Alert } from "../../api";
 import "./alert-list.component.css";
+import { AlertEntityApi } from "./api";
 
 interface Props {
-  data: Alert[];
+  data: AlertEntityApi[];
   title: string;
 }
 

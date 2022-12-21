@@ -2,14 +2,14 @@
 // >> TODO: Componentizar en ekl task header lo de las opciones, crear carpeta componentes dentro de task-list
 
 import React, { useState, useEffect } from "react";
-import { Task } from "../../api";
-import { FilterOptions } from "./components/filter-options.component";
+import { TaskEntityApi } from "./api";
+import { FilterOptions } from "./components/filter-options/filter-options.component";
 import { TaskList } from "./task-list.component";
 
 import "./task-list.component.css"; // Importa tus estilos personalizados
 
 interface Props {
-  data: Task[];
+  data: TaskEntityApi[];
 }
 
 export const TaskListContainer = (props: Props) => {
@@ -67,7 +67,7 @@ export const TaskListContainer = (props: Props) => {
     onFilterPrioChange(selectedPriority);
   }, [selectedPriority]);
 
-  const filteredTasks = data.filter((task: Task) => {
+  const filteredTasks = data.filter((task: TaskEntityApi) => {
     return filterPrio !== "all" && getPriorityString(task.priority) !== filterPrio
       ? false
       : filterType !== "Alle" && task.type !== filterType

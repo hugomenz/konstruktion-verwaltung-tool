@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Task } from "../../api";
 import CheckIcon from "@mui/icons-material/Check";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import RuleIcon from "@mui/icons-material/Rule";
 import "./task-list.component.css"; // Importa tus estilos personalizados
+import { TaskEntityApi } from "./api";
 
 interface Props {
-  task: Task;
+  task: TaskEntityApi;
 }
 
 export const TaskList = (props: Props) => {

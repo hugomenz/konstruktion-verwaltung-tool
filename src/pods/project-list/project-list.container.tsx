@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Project } from "../../api";
+import { ProjectEntityApi } from "./api/project-list.api-model";
 import { ProjectList } from "./project-list.component";
 
 interface Props {
-  data: Project[];
+  data: ProjectEntityApi[];
 }
 
 export const ProjectListContainer = (props: Props) => {
