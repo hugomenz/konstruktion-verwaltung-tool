@@ -16,7 +16,8 @@ Working on complex machinery projects can become chaotic when you are managing m
 ## Technologies
 
 - React (for building the web application)
-- JSON (for data storage and retrieval in the current version)
+- JSON (for data storage and retrieval (old version))
+- .NET 6 (server API REST)
 
 ### Future developments
 
@@ -85,6 +86,24 @@ The projects in the JSON file look like this:
   ]
 }
 ```
+
+## API REST
+
+This project uses a RESTful API for handling the communication between the frontend and the database. The API is built using the ASP.NET Core framework and utilizes the Repository pattern for interacting with the data.
+
+<p align="center">
+  <img src="./public/apiRest.JPG" width="400"/>
+</p>
+
+### Endpoints
+
+The following endpoints are available for interacting with the data:
+
+- GET `/api/projects`: Returns a list of all projects in the database.
+- GET `/api/projects/{id}`: Returns a specific project with the given ID.
+- POST `/api/projects`: Creates a new project in the database. The request body must contain a JSON object representing the project.
+- PUT `/api/projects/{id}`: Updates a specific project with the given ID. The request body must contain a JSON object representing the updated project.
+- DELETE `/api/projects/{id}`: Deletes a specific project with the given ID.
 
 ## Installation and Usage
 
