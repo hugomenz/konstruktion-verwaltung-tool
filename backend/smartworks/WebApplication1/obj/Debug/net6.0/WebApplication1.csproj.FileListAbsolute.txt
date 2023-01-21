@@ -1,0 +1,7 @@
+C:\Users\Hugo_\Documents\fullStack\konstruktion-verwaltung-tool\backend\smartworks\WebApplication1\obj\Debug\net6.0\WebApplication1.csproj.AssemblyReference.cache
+C:\Users\Hugo_\Documents\fullStack\konstruktion-verwaltung-tool\backend\smartworks\WebApplication1\obj\Debug\net6.0\WebApplication1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hugo_\Documents\fullStack\konstruktion-verwaltung-tool\backend\smartworks\WebApplication1\obj\Debug\net6.0\WebApplication1.AssemblyInfoInputs.cache
+C:\Users\Hugo_\Documents\fullStack\konstruktion-verwaltung-tool\backend\smartworks\WebApplication1\obj\Debug\net6.0\WebApplication1.AssemblyInfo.cs
+C:\Users\Hugo_\Documents\fullStack\konstruktion-verwaltung-tool\backend\smartworks\WebApplication1\obj\Debug\net6.0\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\Hugo_\Documents\fullStack\konstruktion-verwaltung-tool\backend\smartworks\WebApplication1\obj\Debug\net6.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Hugo_\Documents\fullStack\konstruktion-verwaltung-tool\backend\smartworks\WebApplication1\obj\Debug\net6.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cache

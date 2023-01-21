@@ -24,6 +24,7 @@ yarn-error.log*
 
 # others
 TODO.md
+IDEAS.md
 
 #server
 server/node_modules
