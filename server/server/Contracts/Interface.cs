@@ -8,12 +8,9 @@ namespace server.Contracts
         List<ProjectEntity> GetProjectList();
         ProjectEntity GetProjectById(int id);
 
-        void AddTask(TaskEntity task);
-        void UpdateTask(TaskEntity task);
-        void DeleteTask(int id);
+        void AddProject(ProjectEntity task);
+        void UpdateProject(ProjectEntity task);
+        void DeleteProject(int id);
 
-        void AddAlert(AlertEntity alert);
-        void UpdateAlert(AlertEntity alert);
-        void DeleteAlert(int id);
     }
 }
