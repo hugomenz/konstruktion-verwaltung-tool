@@ -1,0 +1,285 @@
+{
+    "project_list": [
+        {
+            "id": "1",
+            "projectNumber": 1205,
+            "description": "Rundschlinge Automat",
+            "customer": "Ofita S.L",
+            "estate": "in Konstruktion",
+            "isActive": true,
+            "designer": "USER 1",
+            "alert_list": [
+                {
+                    "id": "1",
+                    "description": "Alert Test 1. Änderung Standard Zeichung Montageplatte Pneumatik",
+                    "date": "11.12.2022 10:15",
+                    "type": "Änderung",
+                    "user": "USER 1",
+                    "projectNumber": 1205
+                }
+            ],
+            "task_list": [
+                {
+                    "id": "1",
+                    "description": "Fehler in der Grundplatte für Station 4 gefunden. Es soll geändert werden",
+                    "date": "11.12.2022 10:44",
+                    "type": "Änderung",
+                    "priority": 1,
+                    "user": "USER 1",
+                    "projectNumber": 1205,
+                    "isCompleted": false
+                },
+                {
+                    "id": "2",
+                    "description": "Kollision zwischen Station 1 und Station 2",
+                    "date": "13.12.2022 10:33",
+                    "type": "Nachprüfung",
+                    "priority": 1,
+                    "user": "USER 2",
+                    "projectNumber": 1205,
+                    "isCompleted": false
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "projectNumber": 1114,
+            "description": "Seat Belt Automat",
+            "customer": "Alfred Remmen",
+            "estate": "in Konstruktion",
+            "isActive": true,
+            "designer": "USER 1",
+            "alert_list": [
+                {
+                    "id": "1",
+                    "description": "Alert Test 2. Kollision! ich brauch unterstützung mit dem Design",
+                    "date": "13.12.2022 10:15",
+                    "type": "Hilfe",
+                    "user": "USER 1",
+                    "projectNumber": 1114
+                },
+
+                {
+                    "id": "2",
+                    "description": "Alert Test 3. Es fehlt mir nichts ein! ich brauch unterstützung mit dem Design",
+                    "date": "15.12.2022 10:15",
+                    "type": "Hilfe",
+                    "user": "USER 1",
+                    "projectNumber": 1114
+                }
+            ],
+            "task_list": [
+                {
+                    "id": "1",
+                    "description": "Teile für die Station 2 können bestellt werden",
+                    "date": "14.12.2022 10:55",
+                    "type": "Bestellung",
+                    "priority": 1,
+                    "user": "USER 1",
+                    "projectNumber": 1114,
+                    "isCompleted": false
+                },
+                {
+                    "id": "2",
+                    "description": "Terminplan am Kunde schicken",
+                    "date": "15.12.2022 10:25",
+                    "type": "Dokumentation",
+                    "priority": 1,
+                    "user": "MANAGER",
+                    "projectNumber": 1114,
+                    "isCompleted": false
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "projectNumber": 1283,
+            "description": "Hot Cut Automat",
+            "customer": "Berno Auto Arg",
+            "estate": "in Konstruktion - Montage",
+            "isActive": true,
+            "designer": "USER 1",
+            "alert_list": [
+                {
+                    "id": "1",
+                    "description": "Alert Test 4. Mögliche Kollision zwischen Station 3 und 4 in 1205",
+                    "date": "17.12.2022 10:15",
+                    "type": "revision",
+                    "user": "USER 1",
+                    "projectNumber": 1283
+                }
+            ],
+            "task_list": [
+                {
+                    "id": "1",
+                    "description": "Teile für Station 3 vorbereiten. Kollision Prüfung",
+                    "date": "16.12.2022 09:15",
+                    "type": "Nachprüfung",
+                    "priority": 2,
+                    "user": "USER 1",
+                    "projectNumber": 1283,
+                    "isCompleted": false
+                },
+                {
+                    "id": "2",
+                    "description": "Zeichnugen für Station 3. ",
+                    "date": "17.12.2022 11:15",
+                    "type": "Zeichnungen",
+                    "priority": 3,
+                    "user": "USER 1",
+                    "projectNumber": 1283,
+                    "isCompleted": false
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "projectNumber": 1432,
+            "description": "Sling-Maschine Automat",
+            "customer": "Industrieausrüstung GmbH",
+            "estate": "in Konstruktion - Bestellung",
+            "isActive": true,
+            "designer": "USER 2",
+            "alert_list": [
+                {
+                    "id": "1",
+                    "description": "Alarm Test 1. Schlinge beschädigt",
+                    "date": "23.12.2022 10:15",
+                    "type": "Fehler",
+                    "user": "USER 2",
+                    "projectNumber": 1432
+                },
+                {
+                    "id": "2",
+                    "description": "Alarm Test 2. Motor defekt",
+                    "date": "24.12.2022 08:00",
+                    "type": "Fehler",
+                    "user": "MANAGER",
+                    "projectNumber": 1432
+                }
+            ],
+            "task_list": [
+                {
+                    "id": "1",
+                    "description": "Beschädigte Schlinge ersetzen",
+                    "date": "23.12.2022 12:00",
+                    "type": "Reparatur",
+                    "priority": 1,
+                    "user": "USER 2",
+                    "projectNumber": 1432,
+                    "isCompleted": false
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "projectNumber": 1519,
+            "description": "Sling-Maschine für Lasten mit Kran",
+            "customer": "Kran- und Hebetechnik AG",
+            "estate": "abgeschlossen",
+            "isActive": false,
+            "designer": "USER 2",
+            "alert_list": [
+                {
+                    "id": "1",
+                    "description": "Alarm Test 3. Kunde meldet Fehler bei Sling-Maschine",
+                    "date": "25.12.2022 10:15",
+                    "type": "Fehlermeldung",
+                    "user": "USER 2",
+                    "projectNumber": 1519
+                }
+            ],
+            "task_list": [
+                {
+                    "id": "1",
+                    "description": "Fehler an Sling-Maschine überprüfen",
+                    "date": "25.12.2022 12:00",
+                    "type": "Nachprüfung",
+                    "priority": 1,
+                    "user": "MANAGER",
+                    "projectNumber": 1519,
+                    "isCompleted": false
+                },
+                {
+                    "id": "2",
+                    "description": "Ersatzteil für Sling-Maschine an Kunde senden",
+                    "date": "26.12.2022 09:00",
+                    "type": "Versand",
+                    "priority": 2,
+                    "user": "USER 2",
+                    "projectNumber": 1519,
+                    "isCompleted": true
+                },
+                {
+                    "id": "3",
+                    "description": "Ersatzteil für Transport Unit 2 senden",
+                    "date": "26.12.2022 09:00",
+                    "type": "Versand",
+                    "priority": 1,
+                    "user": "USER 2",
+                    "projectNumber": 1519,
+                    "isCompleted": false
+                }
+            ]
+        }
+    ],
+    "configuration": {
+        "taskListTypes": [
+            {
+                "id": "1",
+                "description": "Alle"
+            },
+            {
+                "id": "2",
+                "description": "Nachprüfung"
+            },
+            {
+                "id": "3",
+                "description": "Bestellung"
+            },
+            {
+                "id": "4",
+                "description": "Dokumentation"
+            },
+            {
+                "id": "5",
+                "description": "Zeichnungen"
+            },
+            {
+                "id": "6",
+                "description": "Konstruktion"
+            },
+            {
+                "id": "7",
+                "description": "Versand"
+            },
+            {
+                "id": "8",
+                "description": "Änderung"
+            }
+        ],
+        "taskListPriority": [
+            {
+                "id": "1",
+                "value": "all",
+                "description": "Alle"
+            },
+            {
+                "id": "2",
+                "value": "high",
+                "description": "Hoch"
+            },
+            {
+                "id": "3",
+                "value": "med",
+                "description": "Medium"
+            },
+            {
+                "id": "4",
+                "value": "low",
+                "description": "Niedrig"
+            }
+        ]
+    }
+}
+
