@@ -1,5 +1,5 @@
+import { ProjectEntityApi } from "core/api/project-list/models/project-list.api-model";
 import React, { useState } from "react";
-import { ProjectEntityApi } from "./api/project-list.api-model";
 import { ProjectList } from "./project-list.component";
 
 interface Props {
@@ -19,7 +19,7 @@ export const ProjectListContainer = (props: Props) => {
   };
 
   const filteredProjects = data.filter((project) => !hideInactive || project.isActive);
-
+  console.log(data);
   return (
     <div className="prj-container">
       <ProjectList

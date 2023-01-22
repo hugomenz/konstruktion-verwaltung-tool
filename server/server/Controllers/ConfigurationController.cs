@@ -13,7 +13,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace server.Controllers
 {
-    [Route("api/configuration")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ConfigurationController : ControllerBase
     {

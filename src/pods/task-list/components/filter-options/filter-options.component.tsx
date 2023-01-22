@@ -2,8 +2,8 @@ import React from "react";
 
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import IconButton from "@mui/material/IconButton";
-import { PrioConfigEntityApi, TypeConfigEntityApi } from "./api/filter-options.api-model";
-import { getPriorityConfigList, getTypeConfigList } from "./api/filter-options.api";
+import { PrioConfigEntityApi, TypeConfigEntityApi } from "core/api/configuration/models/configuration.model";
+import { getPriorityConfigList, getTypeConfigList } from "core/api/configuration/configuration.business";
 
 interface Props {
   selectedType: string;
@@ -29,12 +29,12 @@ export const FilterOptions = (props: Props) => {
   let typeConfig: TypeConfigEntityApi[] = [] as TypeConfigEntityApi[];
   let priorityConfig: PrioConfigEntityApi[] = [] as PrioConfigEntityApi[];
 
-  getTypeConfigList().then((response) => {
+  /*   getTypeConfigList().then((response) => {
     typeConfig = response;
   });
   getPriorityConfigList().then((response) => {
     priorityConfig = response;
-  });
+  }); */
 
   return (
     <>

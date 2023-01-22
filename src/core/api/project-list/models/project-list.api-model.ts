@@ -1,5 +1,5 @@
-import { AlertEntityApi } from "../../alert-list/api";
-import { TaskEntityApi } from "../../task-list/api";
+import { AlertEntityApi } from "./alert-list.api-model";
+import { TaskEntityApi } from "./task-list.api-model";
 
 export interface GetResponse {
   results: ProjectEntityApi[];
@@ -13,6 +13,6 @@ export interface ProjectEntityApi {
   estate: string;
   isActive: boolean;
   designer: string;
-  alert_list: AlertEntityApi[];
-  task_list: TaskEntityApi[];
+  alertList: AlertEntityApi[];
+  taskList: TaskEntityApi[];
 }

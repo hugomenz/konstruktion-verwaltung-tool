@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectEntityApi } from "./api/project-list.api-model";
+import { ProjectEntityApi } from "core/api/project-list/models/project-list.api-model";
 
 import "./project-list.component.css"; // Importa tus estilos personalizados
 

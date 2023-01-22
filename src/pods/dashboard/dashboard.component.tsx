@@ -9,14 +9,14 @@
 // *******************************************************************************
 import React from "react";
 import { AlertList } from "../alert-list/alert-list.component";
-import { AlertEntityApi } from "../alert-list/api";
 import { Calendar } from "../calendar/calender.component";
-import { ProjectEntityApi } from "../project-list/api/project-list.api-model";
+import { ProjectEntityApi } from "core/api/project-list/models/project-list.api-model";
 import { ProjectListContainer } from "../project-list/project-list.container";
-import { TaskEntityApi } from "../task-list/api";
 import { TaskListContainer } from "../task-list/task-list.container";
 
 import "./dashboard.component.css"; // Importa tus estilos personalizados
+import { TaskEntityApi } from "core/api/project-list/models/task-list.api-model";
+import { AlertEntityApi } from "core/api/project-list/models/alert-list.api-model";
 interface Props {
   projects: ProjectEntityApi[];
   tasks: TaskEntityApi[];

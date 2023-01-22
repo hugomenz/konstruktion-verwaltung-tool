@@ -1,8 +1,8 @@
 // **************************************************************
 // >> TODO: Componentizar en ekl task header lo de las opciones, crear carpeta componentes dentro de task-list
 
+import { TaskEntityApi } from "core/api/project-list/models/task-list.api-model";
 import React, { useState, useEffect } from "react";
-import { TaskEntityApi } from "./api";
 import { FilterOptions } from "./components/filter-options/filter-options.component";
 import { TaskList } from "./task-list.component";
 

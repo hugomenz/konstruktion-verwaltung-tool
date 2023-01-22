@@ -15,10 +15,10 @@ namespace server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProjectController : ControllerBase
+    public class ProjectListController : ControllerBase
     {
         private readonly IProjectRepository _projectRepository;
-        public ProjectController(IProjectRepository projectRepository)
+        public ProjectListController(IProjectRepository projectRepository)
         {
             _projectRepository = projectRepository;
         }

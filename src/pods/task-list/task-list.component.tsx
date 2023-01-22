@@ -4,7 +4,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import RuleIcon from "@mui/icons-material/Rule";
 import "./task-list.component.css"; // Importa tus estilos personalizados
-import { TaskEntityApi } from "./api";
+import { TaskEntityApi } from "core/api/project-list/models/task-list.api-model";
 
 interface Props {
   task: TaskEntityApi;
