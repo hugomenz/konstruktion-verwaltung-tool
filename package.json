@@ -29,8 +29,7 @@
     "start-server": "cd server && dotnet run --project server",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "cd server && dotnet restore"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
