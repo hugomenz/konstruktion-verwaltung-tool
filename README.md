@@ -102,11 +102,21 @@ This project uses a RESTful API for handling the communication between the front
 
 The following endpoints are available for interacting with the data:
 
-- GET `/api/projects`: Returns a list of all projects in the database.
-- GET `/api/projects/{id}`: Returns a specific project with the given ID.
-- POST `/api/projects`: Creates a new project in the database. The request body must contain a JSON object representing the project.
-- PUT `/api/projects/{id}`: Updates a specific project with the given ID. The request body must contain a JSON object representing the updated project.
-- DELETE `/api/projects/{id}`: Deletes a specific project with the given ID.
+- GET /api/configuration: Returns the configuration object in the database.
+- GET /api/configuration/tasktype/{id}: Returns a specific task type with the given ID.
+- GET /api/configuration/taskpriority/{id}: Returns a specific task priority with the given ID.
+- POST /api/configuration/taskListTypes: Creates a new task type in the configuration object. The request body must contain a JSON object representing the task type.
+- PUT /api/configuration/taskListTypes: Updates a specific task type in the configuration object. The request body must contain a JSON object representing the updated task type.
+- DELETE /api/configuration/taskListTypes/{id}: Deletes a specific task type with the given ID.
+- POST /api/configuration/taskListPriority: Creates a new task priority in the configuration object. The request body must contain a JSON object representing the task priority.
+- PUT /api/configuration/taskListPriority: Updates a specific task priority in the configuration object. The request body must contain a JSON object representing the updated task priority.
+- DELETE /api/configuration/taskListPriority/{id}: Deletes a specific task priority with the given ID.
+
+- GET /api/projects: Returns a list of all projects in the database.
+- GET /api/projects/{id}: Returns a specific project with the given ID.
+- POST /api/projects: Creates a new project in the database. The request body must contain a JSON object representing the project.
+- PUT /api/projects/{id}: Updates a specific project with the given ID. The request body must contain a JSON object representing the updated project.
+- DELETE /api/projects/{id}: Deletes a specific project with the given ID.
 
 ## Installation and Usage
 
