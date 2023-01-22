@@ -89,7 +89,7 @@ The projects in the JSON file look like this:
 
 ## API REST
 
-This project uses a RESTful API for handling the communication between the frontend and the database. The API is built using the ASP.NET Core framework and utilizes the Repository pattern for interacting with the data.
+This project uses a RESTful API for handling the communication between the frontend and the database. The API is built using .NET 6 and utilizes the Repository pattern for interacting with the data.
 
 <p align="center">
   <img src="./public/apiRest.JPG" width="700"/>
