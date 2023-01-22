@@ -2,6 +2,10 @@
 
 A custom-made project management application for small and medium-sized businesses, focused on mechanical designers. This application provides a dashboard with the next items:
 
+<p align="center">
+  <img src="./public/appscreenshot.jpg" width="700"/>
+</p>
+
 # Inspiration for the Project
 
 Working on complex machinery projects can become chaotic when you are managing multiple projects at the same time. I think that having a centralized, intuitive place to access all necessary project information would eliminate issues such as misunderstandings, forgotten documentation, lost project status, and the need to constantly review everything every 3-4 weeks. This project was inspired by the desire to streamline and simplify the project management process for mechanical designers.
