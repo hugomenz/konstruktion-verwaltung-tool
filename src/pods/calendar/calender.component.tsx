@@ -57,8 +57,8 @@ export const Calendar = () => {
 
   return (
     <div className="calender-container">
-      <button onClick={handlePreviousMonth}>Anterior mes</button>
-      <button onClick={handleNextMonth}>Siguiente mes</button>
+      <button onClick={handlePreviousMonth}>PREV MONTH</button>
+      <button onClick={handleNextMonth}>NEXT MONTH</button>
       <table>
         <thead>
           <tr>

@@ -1,7 +1,7 @@
 .alert-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid green;
+  /*   border: 1px solid green; */
 }
 
 .alert-header {
@@ -33,7 +33,7 @@
 
 .box-left {
   width: 25%;
-  border: 1px solid red;
+  /*   border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,7 +44,7 @@
 
 .box-right {
   width: 75%;
-  border: 1px solid red;
+  /*   border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: center;

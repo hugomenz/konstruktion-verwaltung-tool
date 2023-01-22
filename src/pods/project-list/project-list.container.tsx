@@ -21,7 +21,7 @@ export const ProjectListContainer = (props: Props) => {
   const filteredProjects = data.filter((project) => !hideInactive || project.isActive);
   console.log(data);
   return (
-    <div className="prj-container">
+    <div className="box">
       <ProjectList
         data={filteredProjects}
         title="Projekt List"

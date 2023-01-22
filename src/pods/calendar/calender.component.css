@@ -1,3 +1,5 @@
 .calender-container {
-  border: 1px solid blue;
+  padding: 2rem;
+  /* border: 1px solid blue; */
+  box-shadow: 0 -5px 5px -5px #333;
 }
